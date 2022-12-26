@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+grub2/boot/kernel.bin
+kernel.iso
+*.o
