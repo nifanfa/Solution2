@@ -95,14 +95,15 @@ loop:
         cmp ebx,edx
         jb loop
 
-        add esp,4
-
         lea eax,[EXE+DOSHeader.e_lfanew]
         mov eax,[eax]
         add eax,EXE
         lea eax,[eax+NTHeader.AddressOfEntryPoint]
         mov eax,[eax]
-        add eax,EXE
+        add eax,[esp+0]
+
+        add esp,4
+
         call eax
 
         cli
@@ -186,7 +187,6 @@ struc SectionHeader
         .Characteristics: resb 4
 endstruc
 
-resb 0x2000
 STACKBOTTOM:
 times 0x10000-($-$$) db 0
 STACKTOP:
