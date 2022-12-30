@@ -17,10 +17,13 @@ void console_initialize() {
 }
 
 void console_putchar(char c) {
+	if (c == '\n')goto newline;
+
 	unsigned short* ptr = 0xb8000;
-	ptr[cursor_y * 25 + cursor_x] = 0x0F00|c;
+	ptr[cursor_y * 80 + cursor_x] = 0x0F00|c;
 	cursor_x++;
-	if (cursor_x > 25) {
+	if (cursor_x >= 80) {
+	newline:
 		cursor_x = 0;
 		cursor_y++;
 	}
@@ -30,17 +33,4 @@ void console_putchar(char c) {
 	__outbyte(0x3D5, (pos & 0xFF));
 	__outbyte(0x3D4, 0x0E);
 	__outbyte(0x3D5, ((pos >> 8) & 0xFF));
-}
-
-void _putchar(char character) {
-	console_putchar(character);
-}
-
-void console_write(const char* c) {
-	int i = 0;
-	while (c[i] != 0)
-	{
-		console_putchar(c[i]);
-		i++;
-	}
 }
