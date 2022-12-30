@@ -1,6 +1,10 @@
+#include <intrin.h>
+#include "printf.h"
+
 int main() 
 {
 	console_initialize();
-	console_write("hello world!\0");
+	int i = 0x12345;
+	printf("hello world! i:0x%x",i);
 	for (;;);
 }

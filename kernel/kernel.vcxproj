@@ -13,6 +13,10 @@
   <ItemGroup>
     <ClCompile Include="console.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="printf.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="printf.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -68,7 +72,7 @@
       <AdditionalDependencies />
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <BaseAddress>0x110000</BaseAddress>
+      <BaseAddress>0x1000000</BaseAddress>
       <RandomizedBaseAddress />
       <FixedBaseAddress>true</FixedBaseAddress>
       <DataExecutionPrevention>false</DataExecutionPrevention>

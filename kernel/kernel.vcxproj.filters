@@ -21,5 +21,13 @@
     <ClCompile Include="console.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="printf.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="printf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

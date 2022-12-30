@@ -32,6 +32,10 @@ void console_putchar(char c) {
 	__outbyte(0x3D5, ((pos >> 8) & 0xFF));
 }
 
+void _putchar(char character) {
+	console_putchar(character);
+}
+
 void console_write(const char* c) {
 	int i = 0;
 	while (c[i] != 0)
